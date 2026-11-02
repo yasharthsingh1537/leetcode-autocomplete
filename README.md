@@ -1,4 +1,3 @@
-
 # LeetCode AutoComplete
 
 An intelligent Chrome extension that provides

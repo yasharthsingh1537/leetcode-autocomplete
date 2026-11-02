@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Leetcode Autocomplete",
+  "version": "1.0.0",
+  "description": "Intelligent context-aware autocomplete for Leetcode.",
+  "permissions": [],
+  "host_permissions": [],
+  "background": {
+    "service_worker": "src/background/service-worker.ts",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Leetcode Autocomplete",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*",
+        "https://leetcode.cn/*",
+        "https://www.leetcode.com/*"
+      ],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle"
+    }
+  ]
+}
